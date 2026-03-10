@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+/* Burnt Sienna palette - Siena tostada */
+:root {
+  --background: #F5F5DC;
+  --foreground: #A0522D;
+  --primary: #E35336;
+  --primary-hover: #d14a30;
+  --secondary: #F4A460;
+  --accent: #A0522D;
+  --cream: #F5F5DC;
+  --terracotta: #E35336;
+  --sandy: #F4A460;
+  --sienna: #A0522D;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-cream: var(--cream);
+  --color-terracotta: var(--terracotta);
+  --color-sandy: var(--sandy);
+  --color-sienna: var(--sienna);
+  --font-sans: var(--font-geist);
+  --font-display: var(--font-romagothicbold);
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--cream);
+  color: var(--sienna);
+  font-family: var(--font-geist), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: -0.02em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: var(--font-romagothicbold), sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E5E5D0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sienna);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8B4513;
+}
+
+/* Dopamine-inducing animations - elegant & satisfying */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes subtleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes softGlow {
+  0%, 100% {
+    box-shadow: 0 4px 24px rgba(227, 83, 54, 0.25);
+  }
+  50% {
+    box-shadow: 0 8px 32px rgba(227, 83, 54, 0.35);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes cardFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-card-float {
+  animation: cardFloat 5s ease-in-out infinite;
+}
+
+.animate-card-float-delay-1 { animation-delay: 0.5s; }
+.animate-card-float-delay-2 { animation-delay: 1s; }
+.animate-card-float-delay-3 { animation-delay: 1.5s; }
+
+.animate-fade-in-up {
+  animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-subtle-float {
+  animation: subtleFloat 4s ease-in-out infinite;
+}
+
+.animate-soft-glow {
+  animation: softGlow 3s ease-in-out infinite;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up,
+  .animate-fade-in,
+  .animate-subtle-float,
+  .animate-soft-glow,
+  .animate-scale-in,
+  .animate-card-float {
+    animation: none;
+  }
+}
